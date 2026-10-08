@@ -1,5 +1,9 @@
 # TP-Link Archer T2U Plus (Realtek RTL8811AU) - Wi-Fi 5 GHz Kopma ve Yüksek Hızda Kilitlenme Çözüm Rehberi
 
+<p align="center">
+  <img src="assets/story.jpg" alt="Wi-Fi Dönüşüm Hikayesi" width="600" />
+</p>
+
 Bu depo; **TP-Link Archer T2U Plus** USB Wi-Fi adaptörünün modern Wi-Fi 6 router'lar ile 5 GHz bandında çalışırken yaşadığı periyodik kopma, yüksek bant genişliğinde (150+ Mbps) donma ve soket zaman aşımı sorunlarının **kesin ve doğrulanmış çözümünü** içerir.
 
 ---

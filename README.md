@@ -1,5 +1,9 @@
 # TP-Link Archer T2U Plus (Realtek RTL8811AU) - Complete Wi-Fi 5 GHz Fix Guide
 
+<p align="center">
+  <img src="assets/story.jpg" alt="Wi-Fi Transformation Story" width="600" />
+</p>
+
 Official repository for resolving intermittent disconnects, high-throughput socket crashes (150+ Mbps), and driver watchdog stalls on the **TP-Link Archer T2U Plus** USB Wi-Fi adapter when connected to modern Wi-Fi 6 routers.
 
 ---
