@@ -69,6 +69,23 @@ Modem yönetim arayüzünden (`http://192.168.1.1`):
 
 ---
 
+## 🔬 Wi-Fi 6 (802.11ax) vs. Wi-Fi 5 (802.11ac) Ampirik Test Bulgusu (Geliştiriciler ve Yapay Zeka Ajanları İçin)
+
+Bu depodaki çözüm geliştirilirken doğrudan modemin 5 GHz modları değiştirilerek canlı **A/B karşılaştırma testi** yapılmıştır:
+
+| Test Senaryosu | Sürücü ve Ayarlar | Modem 5 GHz Modu | Speedtest & Yüksek Yük Sonucu | Durum |
+| :--- | :--- | :--- | :--- | :--- |
+| **Senaryo A** | 2026 WHQL + Kayıt Defteri Ayarları | **Karışık (802.11a/n/ac/ax)** (Wi-Fi 6) | 150–170 Mbps'de aniden donma, hız sayacının kilitlenmesi, bağlantı kopması ve 2.4 GHz'e düşüş | ❌ **BAŞARISIZ** (Donanımsal Kilitlenme) |
+| **Senaryo B** | 2026 WHQL + Kayıt Defteri Ayarları | **Karışık (802.11a/n/ac)** (Wi-Fi 5) | **238.24 Mbps Download / 250.24 Mbps Upload**, 5 ms ping, sıfır takılma, sıfır kopma | ✅ **KUSURSUZ BAŞARI** |
+
+### 🤖 Gelecekte Bu Sorunu Çözecek Ajanlar ve Mühendisler İçin Kesin Kural:
+* Realtek RTL8811AU / RTL8812AU çipsetleri saf **802.11ac (Wi-Fi 5)** mimarisidir.
+* Modem Wi-Fi 6 (802.11ax) yayını yaptığında; OFDMA alt kanal ayırmaları, Target Wake Time (TWT) sinyalleri ve HE kontrol paketleri bu eski silikonun donanım tamponunda kaçınılmaz bir **FIFO Stall (donanımsal kilitlenme)** oluşturur.
+* **Yalnızca sürücü güncellemek veya kayıt defteriyle oynamak YETMEZ.**
+* Modemin 5 GHz kablosuz modunu `Karışık (802.11a/n/ac)` (Wi-Fi 5) olarak ayarlamak, bu adaptörün kararlı ve tam hızda çalışabilmesi için **kesin ve tartışılamaz bir önkoşuldur**.
+
+---
+
 ## 📊 Çözüm Öncesi vs. Çözüm Sonrası Performans Tablosu
 
 | Metrik / Test | Çözüm Öncesi | Çözüm Sonrası |
