@@ -57,7 +57,7 @@ Sürücünün yüksek yük altında bağlantıyı zorla sıfırlamasını engell
 ### 3. Modem / Router Optimizasyonu (ZTE ZXHN H3601P)
 Modem yönetim arayüzünden (`http://192.168.1.1`):
 * **5 GHz Kanalı**: Radar frekanslarından etkilenmeyen standart **Kanal 36**'ya (veya 40, 44, 48) sabitlendi (`AutoChannelEnabled: 0`).
-* **Kablosuz Modu**: **Karışık (802.11a/n/ac)** olarak ayarlandı.
+* **Kablosuz Modu**: **Karışık (802.11a/n/ac/ax)** (Wi-Fi 6) veya **Karışık (802.11a/n/ac)** (2026 sürücüsü ve `BeamformCap=0` sayesinde modem tam Wi-Fi 6 modundayken bile adaptör 433.3 Mbps hızında sıfır kilitlenmeyle çalışmaktadır; evdeki diğer Wi-Fi 6 telefonlar da tam hızından yararlanır).
 * **Güvenlik & Şifreleme**: **WPA2-PSK-AES** seçildi (PMF / WPA3 çerçeve uyumsuzlukları devre dışı bırakıldı).
 
 ### 4. Fiziksel Konum ve USB Portu

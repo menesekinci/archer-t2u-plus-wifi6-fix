@@ -59,7 +59,7 @@ Applied directly to the adapter device class key:
 ### 3. Router Configuration (ZTE ZXHN H3601P)
 Configured via web management interface (`http://192.168.1.1`):
 * **5 GHz Channel**: Fixed to non-DFS **Channel 36** (`AutoChannelEnabled: 0`).
-* **Wireless Mode**: **Mixed (802.11a/n/ac)**.
+* **Wireless Mode**: **Mixed (802.11a/n/ac/ax)** (Wi-Fi 6) or **Mixed (802.11a/n/ac)** (With the 2026 driver and `BeamformCap=0`, the adapter runs at full 433.3 Mbps with zero stalls even when the router is in full Wi-Fi 6 mode, allowing other Wi-Fi 6 devices in the network to operate at full speed).
 * **Security & Cipher**: **WPA2-PSK-AES** (Disables PMF / WPA3 frame conflicts).
 
 ### 4. Physical Optimization
