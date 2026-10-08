@@ -1,0 +1,2 @@
+@echo off
+powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "Start-Process powershell.exe -ArgumentList '-NoProfile -Command Stop-Service Hamachi2Svc -ErrorAction SilentlyContinue; Set-Service Hamachi2Svc -StartupType Manual -ErrorAction SilentlyContinue; Disable-NetAdapter -Name Hamachi -Confirm:$false -ErrorAction SilentlyContinue; Write-Host \"Hamachi bagdastiricisi ve servisi kapatildi.\" -ForegroundColor Green; Start-Sleep -Seconds 2' -Verb RunAs"
