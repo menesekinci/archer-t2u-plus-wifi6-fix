@@ -57,7 +57,8 @@ Sürücünün yüksek yük altında bağlantıyı zorla sıfırlamasını engell
 ### 3. Modem / Router Optimizasyonu (ZTE ZXHN H3601P)
 Modem yönetim arayüzünden (`http://192.168.1.1`):
 * **5 GHz Kanalı**: Radar frekanslarından etkilenmeyen standart **Kanal 36**'ya (veya 40, 44, 48) sabitlendi (`AutoChannelEnabled: 0`).
-* **Kablosuz Modu**: **Karışık (802.11a/n/ac/ax)** (Wi-Fi 6) veya **Karışık (802.11a/n/ac)** (2026 sürücüsü ve `BeamformCap=0` sayesinde modem tam Wi-Fi 6 modundayken bile adaptör 433.3 Mbps hızında sıfır kilitlenmeyle çalışmaktadır; evdeki diğer Wi-Fi 6 telefonlar da tam hızından yararlanır).
+* **Kablosuz Modu (Kritik Önkoşul)**: **Karışık (802.11a/n/ac)** (Wi-Fi 5).  
+  * **Neden Zorunlu?** Realtek RTL8811AU yongası donanımsal olarak Wi-Fi 5 (802.11ac) mimarisindedir. Modem 802.11ax (Wi-Fi 6) modundayken yüksek bant genişliği aktarımlarında (Speedtest gibi sürekli yüklerde) gönderilen OFDMA el sıkışmaları, Target Wake Time (TWT) ve HE kontrol çerçeveleri RTL8811AU çipinin donanım tamponunda (FIFO stall) kilitlenmeye ve soket düşmesine neden olur. Modem arayüzünde de ZTE tarafından *"Bazı Wi-Fi cihazlarının ağ kartları eski; lütfen Wi-Fi modunu a/n/ac olarak değiştirin"* uyarısı bulunmaktadır. Bu nedenle 5 GHz modunun `Karışık (802.11a/n/ac)` olarak ayarlanması kilitlenmeyi önlemenin vazgeçilmez şartıdır.
 * **Güvenlik & Şifreleme**: **WPA2-PSK-AES** seçildi (PMF / WPA3 çerçeve uyumsuzlukları devre dışı bırakıldı).
 
 ### 4. Fiziksel Konum ve USB Portu

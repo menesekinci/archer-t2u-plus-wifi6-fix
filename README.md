@@ -59,7 +59,8 @@ Applied directly to the adapter device class key:
 ### 3. Router Configuration (ZTE ZXHN H3601P)
 Configured via web management interface (`http://192.168.1.1`):
 * **5 GHz Channel**: Fixed to non-DFS **Channel 36** (`AutoChannelEnabled: 0`).
-* **Wireless Mode**: **Mixed (802.11a/n/ac/ax)** (Wi-Fi 6) or **Mixed (802.11a/n/ac)** (With the 2026 driver and `BeamformCap=0`, the adapter runs at full 433.3 Mbps with zero stalls even when the router is in full Wi-Fi 6 mode, allowing other Wi-Fi 6 devices in the network to operate at full speed).
+* **Wireless Mode (Critical Prerequisite)**: **Mixed (802.11a/n/ac)** (Wi-Fi 5).  
+  * **Why Mandatory?** The Realtek RTL8811AU is fundamentally a Wi-Fi 5 (802.11ac) hardware chipset. When modern routers broadcast in 802.11ax (Wi-Fi 6) mode, continuous high-throughput bursts (e.g. Speedtests) transmit 802.11ax-specific Target Wake Time (TWT), HE trigger frames, and OFDMA control frames that RTL8811AU silicon cannot interpret, leading to hardware FIFO buffer lockups and sudden TCP socket death. In fact, router manufacturers (such as ZTE) display an explicit firmware notice: *"Some Wi-Fi devices have legacy network card drivers. Please upgrade network card drivers or change Wi-Fi mode to a/n/ac."* Setting the router's 5 GHz band to `Mixed (802.11a/n/ac)` is an absolute prerequisite to prevent freezes.
 * **Security & Cipher**: **WPA2-PSK-AES** (Disables PMF / WPA3 frame conflicts).
 
 ### 4. Physical Optimization
